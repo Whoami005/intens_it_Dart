@@ -12,22 +12,22 @@ class Train{
   String time = '';
   int number = 0;
 
-  Train({required city, required time, number = 1}){
-    this.city = city;
-    this.time = time;
-    this.number = number;
+  Train({required this.city, required this.time, this.number = 1}){
+    // this.city = city;
+    // this.time = time;
+    // this.number = number;
   }
 
-  Train.toMoscow({required time, required number}){
+  Train.toMoscow({required this.time, required this.number}){
     this.city = 'Москва';
-    this.time = time;
-    this.number = number;
+    // this.time = time;
+    // this.number = number;
   }
 
-  Train.am9({required city, required number}){
-    this.city = city;
+  Train.am9({required this.city, required this.number}){
+    // this.city = city;
     this.time = '9 утра';
-    this.number = number;
+    // this.number = number;
   }
 
   void info(){
