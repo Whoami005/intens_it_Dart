@@ -3,12 +3,18 @@ void main(){
   Bankcard firstPerson = Bankcard('Ivan', '555555', 2222)
     ..balance = 50000;
   firstPerson.take(5000);
-  Bankcard.y10('Oleg', '111111');
   print(firstPerson);
 
- // Bankcard seccondPerson = Bankcard.y10('Oleg', '111111');
- //  print(seccondPerson);
-  Bankcard.y10('Oleg', '111111');
+ Bankcard secondPerson = Bankcard.y10('Oleg', '111111')
+   ..balance = 1000000;
+ secondPerson.put(50000);
+ print(secondPerson);
+
+  Bankcard thirdPerson = Bankcard.y5('Ефлантий', '010101')
+    ..balance = 1000;
+  thirdPerson.take(500);
+  print(thirdPerson);
+
 }
 
 class Bankcard{
