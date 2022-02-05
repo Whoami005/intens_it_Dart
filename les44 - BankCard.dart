@@ -1,23 +1,26 @@
 
 void main(){
-  Bankcard firstPerson = Bankcard('Ivan', '555555', 2222)
+  BankCard firstPerson = BankCard('Ivan', '555555', 2222)
     ..balance = 50000;
   firstPerson.take(5000);
   print(firstPerson);
 
- Bankcard secondPerson = Bankcard.y10('Oleg', '111111')
+ BankCard secondPerson = BankCard.y10('Oleg', '111111')
    ..balance = 1000000;
  secondPerson.put(50000);
  print(secondPerson);
 
-  Bankcard thirdPerson = Bankcard.y5('Ефлантий', '010101')
+  BankCard thirdPerson = BankCard.y5('Ефлантий', '010101')
     ..balance = 1000;
   thirdPerson.take(500);
   print(thirdPerson);
 
+ BankCard fourPerson = BankCard.vip(owner: 'Magomed', account: '666666');
+  print(fourPerson);
+
 }
 
-class Bankcard{
+class BankCard{
   String owner;
   String account;
   int validityPeriod;
@@ -41,9 +44,10 @@ class Bankcard{
     balance -= money;
   }
 
-  Bankcard(this.owner, this.account, this.validityPeriod){}
-  Bankcard.y10(String owner, String account) : this(owner, account, 2032);
-  Bankcard.y5(String owner, String account) : this(owner, account, 2027);
+  BankCard(this.owner, this.account, this.validityPeriod){}
+  BankCard.vip({required this.owner, required this.account}) : validityPeriod = 2037, _balance = 15000000;
+  BankCard.y10(String owner, String account) : this(owner, account, 2032);
+  BankCard.y5(String owner, String account) : this(owner, account, 2027);
 
   @override
   String toString() {
